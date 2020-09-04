@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <link rel="stylesheet" href="home.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+            <title>Trojan Connect</title>
+        </head>
+        <body>
+            <div class="container-fluid main">
+                <nav class="navbar navbar-light justify-content-start shadow">
+                    <span class="navbar-brand">
+                        <img src="images/logo.png" width="60" height="60" loading="lazy">
+                    </span>
+                    <form class="form-inline ">
+                        <input class="form-control search-bar" type="text" placeholder="Search your fellow trojans!">
+                        <button class="btn btn-outline-primary search-button" type="submit">
+                            <svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <button id="profile" class="btn text-center user" type="button" data-toggle="collapse" data-target="#drop" aria-controls="drop" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg width="30" height="30" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                            <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                        </svg>
+                    </button> 
+                </nav>
+                <div class="menu">
+                    <div class="collapse" id="drop">
+                        <div class="p-4">
+                            <span class="align-middle">
+                                <a href="login.html">Log In
+                                    <svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                    </svg>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <script>
+                document.addEventListener("click", (evt) => {
+                const flyoutElement = document.getElementById("drop");
+                let targetElement = evt.target; // clicked element
+
+                do {
+                    if (targetElement == flyoutElement || document.getElementById("profile").getAttribute("aria-expanded") == "false") {
+                        // This is a click inside or dropdown is not expanded. Do nothing, just return.
+                        return;
+                    }
+                    // Go up the DOM
+                    targetElement = targetElement.parentNode;
+                } while (targetElement);
+
+                // This is a click outside.
+                document.getElementById("profile").click();
+                });
+                
+            </script>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        </body>
+    </html>
