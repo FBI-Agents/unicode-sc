@@ -4,6 +4,7 @@
 
 html {
     background-color:lightgray;
+    font-family: "Noto Sans JP";
 }
 
 .main{
@@ -46,7 +47,6 @@ html {
 
 .profile {
     background-color:lightgray;
-    font-family: "Noto Sans JP";
     height: 650px;
     box-sizing: border-box;
 }
@@ -64,9 +64,68 @@ html {
     margin-right: auto;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 3px 3px 3px gray;  
+    box-shadow: 3px 3px 3px gray;
+}
+#cover {
+    width: 100%;
+    margin: 0;
 }
 
-#cover {
-	width: 100%;
+#cover + img {
+    margin-top: -10%;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-bottom: 0;
+    border-radius: 50%;
+    background-color: white;
+    border: 3.5px solid white;
+    width: 10%;
 }
+
+.content-wrapper {
+    margin-top: -1%;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+.content-wrapper h1 {
+    font-weight: bolder;
+}
+
+.user-information {
+    width: 70%;
+    margin: auto;
+}
+
+.col1, .col2 {
+    box-sizing: border-box;
+}
+.col1 {
+    font-weight: bold;
+    width: 19%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 27%;
+    float: left;
+}
+
+.col2 {
+    width: 27%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+}
+.clearfloating {
+    clear: both;
+}
+
+#edit-profile {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: #b20837;
+    border-color: #b20837;
+    margin-top: 60px;
+    color: #fec52e;
+}
+
