@@ -17,7 +17,7 @@
                     </span>
                     <form class="form-inline ">
                         <input class="form-control search-bar" type="text" placeholder="Search your fellow trojans!">
-                        <button class="btn btn-outline-primary search-button" type="submit">
+                        <button class="btn btn-outline-danger search-button" type="submit">
                             <svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
                                 <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
@@ -64,11 +64,14 @@
                         <div class="form-group row justify-content-center">
                             <label class="col-sm-2 col-form-label" >Class Standing:</label>
                             <div class="col-sm-8">
-                                <select id="standings" class="form-control" aria-placeholder="Choose Here" required>
-                                    <option value="Freshman">Undergraduate - Freshman</option>
-                                    <option value="Sophomore">Undergraduate - Sophomore</option>
-                                    <option value="Junior">Undergraduate - Junior</option>
-                                    <option value="Senior">Undergraduate - Senior</option>
+                                <select id="standings" class="form-control" required>
+                                    <option value="" class="hidden">Choose Here</option>
+                                    <optgroup label="Undergraduate">
+                                        <option value="Freshman">Undergraduate - Freshman</option>
+                                        <option value="Sophomore">Undergraduate - Sophomore</option>
+                                        <option value="Junior">Undergraduate - Junior</option>
+                                        <option value="Senior">Undergraduate - Senior</option>
+                                    </optgroup>
                                     <option value="Graduate">Graduate</option>
                                     <option value="PhD">PhD</option>
                                     <option value="Alumni">Alumni</option>
@@ -80,6 +83,7 @@
                             <label class="col-sm-2 col-form-label" >School:</label>
                             <div class="col-sm-8">
                                 <select class="form-control" id="school">
+                                    <option value="" class="hidden">Choose Here</option>
                                     <option value="Dornsife College of Letters, Arts and Sciences">Dornsife College of Letters, Arts and Sciences</option>
                                     <option value="USC School of Architecture">USC School of Architecture</option>
                                     <option value="Roski School of Art and Design">Roski School of Art and Design</option>
