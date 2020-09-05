@@ -115,7 +115,7 @@ html {
         right: 4%;
     }
     .labels {
-        padding-left: 0;
+        padding-left: 4%;
     }
 }
 
@@ -124,7 +124,7 @@ html {
         right: 1%;
     }
     .labels {
-        padding-left: 4%;
+        padding-left: 5%;
     }
     .signup {
         height: 930px;
