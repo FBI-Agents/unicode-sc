@@ -54,15 +54,24 @@ html {
 .signup {
     background-color:lightgray;
     font-family: "Noto Sans JP";
-    height: 600px;
+    height: 700px;
     box-sizing: border-box;
+}
+
+#register{
+    height: 500px;
+    position: relative;
+    top: 20px;
+}
+.reminder{
+    text-align: center;
 }
 
 .wrapper{
     position: relative;
     top: 80px;
     width: 70%;
-    height: 500px;
+    height: 600px;
     padding-left: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -101,4 +110,8 @@ html {
 #submit:focus{
     background-color: #a61e36;
     color: #fec52e;
+}
+
+.hidden{
+    display: none;
 }

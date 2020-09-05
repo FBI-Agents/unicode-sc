@@ -106,3 +106,10 @@ html {
     background-color: #a61e36;
     color: #fec52e;
 }
+
+.hidden{
+    display: none;
+}
+.reminder{
+    text-align: center;
+}
