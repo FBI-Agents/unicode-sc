@@ -58,7 +58,8 @@
             </div>
             <div class="container-fluid justtify-content-center">
                 <div class="row main-menu">
-                    <div class="col-3">
+                    <div class="col-3 left1" id="left1">
+                        <!--This only display after logged in-->
                         <div class="form-group flex-column justtify-content-center">
                             <label class="form-control welcome">
                                 Welcome Back!
@@ -71,7 +72,13 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-6 chat">
+                    <div class="col-3 left2" id="left2"> 
+                        <!--Fill this part with some text, pics as well not make it blank-->
+
+                    </div>
+
+
+                    <div class="col-6 chat" id="mid1">
                         <h3 class="heading">Talk to Your Trojans!</h3>
                         <div class="chat-box">
                             <div id="chatting">
@@ -81,8 +88,18 @@
                         </div>
                         <button id="text" class="btn btn-primary" type="submit" onclick="send()">Send</button>
                     </div>
-                    <div class="col-3">
-
+                    <div id="mid2" class="col-6">
+                        <!-- Please fill this put with some pictures about USC and texts about our product-->
+                        <!-- Keep styling theme consistent, not javascript needed-->
+                    </div>
+                    <div class="col-3" id="right1">
+                        <!--Reserved part, but still can be fill with useful stuff-->
+                        <!-- If want to achieve the effect of disppearing and reappear when login and logout
+                         follow the above 2 divs and their structures and no need to worry about javascript-->
+                        <!---->
+                    </div>
+                    <div class="col-3" id="right2">
+                        
                     </div>
                 </div>
             </div>
@@ -150,11 +167,20 @@
                     e.innerHTML = name;
                     e.setAttribute("style", "padding-left: 10px;")
                     document.getElementById("user-profile").append(e);
+                    document.getElementById("left1").setAttribute("style", "display: block;")
+                    document.getElementById("left2").setAttribute("style", "display: none;")
+                    document.getElementById("mid1").setAttribute("style", "display: block;")
+                    document.getElementById("mid2").setAttribute("style", "display: none;")
+                    document.getElementById("right1").setAttribute("style", "display: block;")
+                    document.getElementById("right2").setAttribute("style", "display: none;")
                 }
                 else{
-                    //this part need back-end support to extend the json returned
-                    //uncomment it after backend is done
-                    //name = status.first_name + status.last_name;
+                    document.getElementById("left1").setAttribute("style", "display: none;")
+                    document.getElementById("left2").setAttribute("style", "display: block;")
+                    document.getElementById("mid1").setAttribute("style", "display: none;")
+                    document.getElementById("mid2").setAttribute("style", "display: block;")
+                    document.getElementById("left1").setAttribute("style", "display: none;")
+                    document.getElementById("left2").setAttribute("style", "display: block;")
                     
                 }
                 //logout handler

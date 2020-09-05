@@ -52,6 +52,7 @@
     font-size: 24px;
     text-align: center;
     top:70px;
+    z-index: 4;
 }
 #drop{
     background-color: lightgray;
