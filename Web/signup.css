@@ -47,3 +47,11 @@
 .home:hover{
     background: rgba(211, 211, 211, 0.5);
 }
+
+.col-sm-8 select {
+    color: #6c757d;
+}
+
+#placeholder {
+    display: none;
+}
