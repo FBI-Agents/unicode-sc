@@ -10,6 +10,10 @@
     margin-right: 10px;
     background-color: rgb(236, 234, 234);
 }
+.form-inline .search-bar:focus {
+    box-shadow: 0 0 0 3px #ed9aa2;
+    border-color: #a61e36;
+}
 .search-button{
     border-radius: 20px;
 }
@@ -48,8 +52,9 @@
     position: absolute;
     right: 0px;
     width: 160px;
-    font-family: Caveat;
-    font-size: 24px;
+    font-family: "Roboto Slab";
+    font-size: 15px;
+    font-weight: bold;
     text-align: center;
     top:70px;
     z-index: 4;
@@ -69,7 +74,7 @@ a, a:link, a:hover{
     display: none;
 }
 .navi{
-    font-family: "Caveat";
+    font-family: "Roboto Slab";
     font-size: 30px;
 }
 .welcome{
@@ -134,4 +139,15 @@ a, a:link, a:hover{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+@media (max-width: 991px) {
+    
+}
+
+@media (max-width: 767px) {
+    #profile {
+        width: 15%;
+        margin-left: -10%;
+    }
 }
