@@ -80,12 +80,17 @@
     display: none;
 }
 
-.submit {
+#submit {
     border-color: #a61e36;
     color: #a61e36;
 }
-.submit:hover {
+#submit:hover {
     background-color: #a61e36;
     border-color: #a61e36;
+    color: #fec52e;
+}
+
+#submit:focus{
+    background-color: #a61e36;
     color: #fec52e;
 }
