@@ -15,8 +15,8 @@
                     <span class="navbar-brand">
                         <img src="images/logo.png" width="60" height="60" loading="lazy">
                     </span>
-                    <form class="form-inline ">
-                        <input class="form-control search-bar" type="text" placeholder="Search your fellow trojans!">
+                    <form method="GET" action="profile.html" class="form-inline needs-validation" onsubmit="return searchTrojans()">
+                        <input id="finder" class="form-control search-bar" type="text" placeholder="Search your fellow trojans!" required>
                         <button class="btn btn-outline-primary search-button" type="submit">
                             <svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
@@ -36,7 +36,7 @@
                     <div class="collapse" id="drop">
                         <div class="p-4">
                             <span class="align-middle">
-                                <a href="login.html">Log In
+                                <a href="login.html" id="first">Log In
                                     <svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
                                         <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="p-4">
                             <span class="align-middle">
-                                <a href="signup.html">Sign Up
+                                <a href="signup.html" id="second">Sign Up
                                     <svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-person-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zm4.854-7.85a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                                     </svg>
@@ -56,8 +56,58 @@
                     </div>
                 </div>
             </div>
+            <div class="container-fluid justtify-content-center">
+                <div class="row main-menu">
+                    <div class="col-3">
+                        <div class="form-group flex-column justtify-content-center">
+                            <label class="form-control welcome">
+                                Welcome Back!
+                            </label>
+                            <button class="btn navi" id="user-profile">
+                                <svg width="30" height="30" viewBox="0 0 16 16" class="bi bi-person-bounding-box" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                                    <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                </svg>    
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-6 chat">
+                        <h3 class="heading">Talk to Your Trojans!</h3>
+                        <div class="chat-box">
+                            <div id="chatting">
 
+                            </div>
+                            <textarea id="typed" class="chats"></textarea>
+                        </div>
+                        <button id="text" class="btn btn-primary" type="submit" onclick="send()">Send</button>
+                    </div>
+                    <div class="col-3">
 
+                    </div>
+                </div>
+            </div>
+
+            <button id="hide" type="button" class="btn btn-info btn-lg hidden" data-toggle="modal" data-backdrop="static" data-target="#myModal">Open Modal</button>
+
+                <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="titles">Logout Succeed!</h4>
+                        </div>
+                        <div class="modal-body" id="text-body">
+                            <p>You have sucessfully logged out your Trojan Connect. You may safely leave the page.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="results" type="button" class="btn btn-default" data-backdrop="static" data-dismiss="modal" onclick="refresh()">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
 
 
@@ -81,6 +131,93 @@
                 // This is a click outside.
                 document.getElementById("profile").click();
                 });
+
+
+                //for dynamically loading homepage
+                var loggedIn = sessionStorage.getItem("status");
+                var json = JSON.parse(loggedIn);
+                let name = null;
+
+                if (json != null){
+                    document.getElementById("first").innerHTML="Profile <svg width='20' height='20' viewBox='0 0 16 16' class='bi bi-file-person' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M12 1H4a1 1 0 0 0-1 1v10.755S4 11 8 11s5 1.755 5 1.755V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z'/><path fill-rule='evenodd' d='M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'/></svg>";
+                    document.getElementById("second").innerHTML='Sign Out <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zm1.146-7.85a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/></svg>';
+                    document.getElementById("first").setAttribute("href", "profile.html");
+                    document.getElementById("second").setAttribute("href", "#");
+                    document.getElementById("second").setAttribute("onclick", "return signOut()");
+
+                    name = json.username;
+                    var e = document.createElement("span");
+                    e.innerHTML = name;
+                    e.setAttribute("style", "padding-left: 10px;")
+                    document.getElementById("user-profile").append(e);
+                }
+                else{
+                    //this part need back-end support to extend the json returned
+                    //uncomment it after backend is done
+                    //name = status.first_name + status.last_name;
+                    
+                }
+                //logout handler
+                function signOut(){
+                    sessionStorage.removeItem("status");
+                    document.getElementById("hide").click();
+                    return false;
+                }
+
+                function refresh(){
+                    location.reload();
+                }
+
+                //search based on username
+                function searchTrojans(){
+                    var token = JSON.parse(sessionStorage.getItem("status")).authenticationTokenl;
+                    var xhttp = new XMLHttpRequest();
+                    var term = document.getElementById("finder").value;
+                    xhttp.open("GET", "http://localhost:8080/api/user/search/" + term, "false");
+                    xhttp.setRequestHeader("Authroization", "Bearer " + token);
+                    alert(xhttp.responseText)
+                    if (xhttp.status == 403 || xhttp.status == 401){
+
+                        document.getElementById("titles").innerHTML = "Authentication Failed!";
+                        document.getElementById("text-body").innerHTML="Please try searching after logged in."
+                        document.getElementById("hide").click();
+                        return false;
+                    }
+                    else{
+                        alert(1);
+                        sessionStorage.setItem("Search", xhttp.responseText);
+                        return true;
+                    }
+                    
+                }
+
+                //text people
+                function send(){
+
+                    var div1 = document.createElement("div");
+                    div1.setAttribute("class", "media p-3");
+                    var img = document.createElement("img");
+                    img.setAttribute("class", "mr-3 mt-3 rounded-circle")
+                    img.setAttribute("style", "height: 60px; width: 60px;")
+                    img.setAttribute("src", "images/user.jpg")
+                    var div2 = document.createElement("div")
+                    div2.setAttribute("class", "media-body")
+                    var h4 = document.createElement("h6");
+                    var d = new Date();
+                    h4.innerHTML= JSON.parse(sessionStorage.getItem("status")).username + '<small><i> <br> Posted on ' + d +'</i></small>'
+                    var p = document.createElement("p");
+                    p.innerHTML = document.getElementById("typed").value;
+                    p.setAttribute("style", "font-family= 'Noto Sans JP'; font-size: 20px;")
+
+                    div2.appendChild(h4)
+                    div2.appendChild(p);
+
+                    div1.appendChild(img);
+                    div1.appendChild(div2)
+                    document.getElementById("chatting").appendChild(div1);
+                    
+
+                }
                 
             </script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

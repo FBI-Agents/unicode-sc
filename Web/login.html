@@ -113,7 +113,7 @@
                     xhttp.send(JSON.stringify(param));
                     
                     if (xhttp.status == 200 || xhttp.status == 201){
-                        
+                        sessionStorage.setItem("status", (xhttp.responseText));
                     }
                     else{
                         document.getElementById("titles").innerHTML = "Login Failed";

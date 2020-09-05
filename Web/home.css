@@ -64,3 +64,61 @@ a, a:link, a:hover{
     text-decoration: none;
     color: black;
 }
+.hidden{
+    display: none;
+}
+.navi{
+    font-family: "Caveat";
+    font-size: 30px;
+}
+.welcome{
+    font-family: "Noto Sans JP";
+    font-size: 30px;
+    background-color: white;
+    border-style: none;
+    
+}
+.main-menu{
+    position: relative;
+    top: 20px;
+}
+.chat-box{
+    width: 100%;
+    height: 500px;
+    
+}
+.chats{
+    overflow: scroll;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    resize: none;
+    box-sizing: border-box;
+    padding: 10px;
+    top: 40px;
+    border-radius: 3px;
+    border: 2px solid lightgray;
+    box-shadow: 3px 3px 2px lightgray;
+    
+}
+#text{
+    position:relative;
+    left: 85%;
+    top: 40px;
+    width: 80px;
+}
+#chatting{
+    position: relative;
+    top: 20px;
+    width: 100%;
+    height: 280px;
+    border-radius: 3px;
+    border: 2px solid lightgray;
+    box-shadow: 3px 3px 2px lightgray;
+}
+.heading{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
