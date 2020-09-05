@@ -1,12 +1,13 @@
 *{
     margin: 0px;
 }
-html {
+html, body {
     background-color:lightgray;
 }
 .main{
     padding-left: 0px;
     padding-right: 0px;
+    background-color: white;
 }
 .form-inline .search-bar{
     width: 250px;
@@ -45,24 +46,17 @@ html {
 .signup {
     background-color:lightgray;
     font-family: "Noto Sans JP";
-    height: 650px;
+    height: 100%;
     box-sizing: border-box;
 }
 
-#register{
-    height: 500px;
-    position: relative;
-    top: 20px;
-}
-.reminder{
-    text-align: center;
-}
 
 .wrapper{
     position: relative;
     top: 30px;
     width: 70%;
-    height: 600px;
+    height: 100%;
+    margin-bottom: 30px;
     padding-left: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -71,7 +65,7 @@ html {
     margin-right: auto;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 3px 3px 3px gray;  
+    box-shadow: 3px 3px 3px gray;
 }
 
 .labels{

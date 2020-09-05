@@ -1,0 +1,144 @@
+* {
+    margin: 0px;
+}
+html, body {
+    background-color: lightgray;
+}
+.main{
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: white;
+}
+.form-inline .search-bar{
+    width: 250px;
+    margin-right: 10px;
+    background-color: rgb(236, 234, 234);
+}
+.form-inline .search-bar:focus {
+    box-shadow: 0 0 0 3px #ed9aa2;
+    border-color: #a61e36;
+}
+.search-button{
+    border-radius: 20px;
+}
+
+.shadow{
+    box-shadow: 3px 3px 2px lightgray;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.home{
+    position: absolute;
+    transition: .5s ease;
+    right: 8%;
+}
+.home:focus{
+    box-shadow: none;
+}
+.home:hover{
+    background: rgba(237, 154, 162, 0.5);
+}
+.content {
+    background-color: lightgray;
+    font-family: "Noto Sans JP";
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    margin-top: 7%;
+    margin-bottom: 7%;
+    width: 80%;
+    height: 86%;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px gray;
+    box-sizing: border-box;
+}
+.wrapper h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#current-courses, #new-courses {
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+    height: 350px;
+}
+#new-courses h1 {
+    margin-bottom: 25px;
+}
+.clearfloating {
+    clear: both;
+}
+
+#current-courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.select-drop {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.select-drop:focus {
+    box-shadow: 0 0 0 3px #999c9f;
+    border-color: #343a40;
+}
+
+.select-wrapper + button, #new-courses button {
+    display: block;
+    margin: auto;
+}
+#new-courses button {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .home{
+        right: 2%;
+    }
+    #current-courses, #new-courses {
+        width: 100%;
+        margin-top: 10px;
+        clear: both;
+        height: 100%;
+    }
+
+    #new-courses {
+        padding-top: 50px;
+    }
+
+    .labels, .col-sm-8 {
+        padding-left: 0;
+    }
+
+    .col-sm-8 {
+        padding-right: 10%;
+    }
+    .select-wrapper {
+        width: 90%;
+    }
+}
