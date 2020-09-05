@@ -13,9 +13,14 @@ html {
     margin-right: 10px;
     background-color: rgb(236, 234, 234);
 }
+.form-inline .search-bar:focus {
+    box-shadow: 0 0 0 3px #ed9aa2;
+    border-color: #a61e36;
+}
 .search-button{
     border-radius: 20px;
 }
+
 .shadow{
     box-shadow: 3px 3px 2px lightgray;
     width: 100%;
@@ -48,13 +53,13 @@ html {
     box-shadow: none;
 }
 .home:hover{
-    background: rgba(211, 211, 211, 0.5);
+    background: rgba(237, 154, 162, 0.5);
 }
 
 .signup {
     background-color:lightgray;
     font-family: "Noto Sans JP";
-    height: 700px;
+    height: 650px;
     box-sizing: border-box;
 }
 
@@ -69,7 +74,7 @@ html {
 
 .wrapper{
     position: relative;
-    top: 80px;
+    top: 30px;
     width: 70%;
     height: 600px;
     padding-left: 10px;

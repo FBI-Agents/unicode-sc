@@ -13,6 +13,10 @@ html {
     margin-right: 10px;
     background-color: rgb(236, 234, 234);
 }
+.form-inline .search-bar:focus {
+    box-shadow: 0 0 0 3px #ed9aa2;
+    border-color: #a61e36;
+}
 .search-button{
     border-radius: 20px;
 }
@@ -21,8 +25,6 @@ html {
     width: 100%;
     padding-top: 0px;
     padding-bottom: 0px;
-    
-    
 }
 .user{
     position: absolute;
@@ -48,7 +50,7 @@ html {
     box-shadow: none;
 }
 .home:hover{
-    background: rgba(211, 211, 211, 0.5);
+    background: rgba(237, 154, 162, 0.5);
 }
 .login{
     background-color:lightgray;
