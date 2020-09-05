@@ -86,6 +86,7 @@
                             </div>
                             <textarea id="typed" class="chats"></textarea>
                         </div>
+                        <input type="text" placeholder="Recipient" id="recipient">
                         <button id="text" class="btn btn-primary" type="submit" onclick="send()">Send</button>
                     </div>
                     <div id="mid2" class="col-6">
@@ -196,7 +197,7 @@
 
                 //search based on username
                 function searchTrojans(){
-                    var token = JSON.parse(sessionStorage.getItem("status")).authenticationTokenl;
+                    var token = JSON.parse(sessionStorage.getItem("status")).authenticationToken;
                     var xhttp = new XMLHttpRequest();
                     var term = document.getElementById("finder").value;
                     xhttp.open("GET", "http://localhost:8080/api/user/search/" + term, "false");
@@ -210,7 +211,8 @@
                         return false;
                     }
                     else{
-                        alert(1);
+                        
+                        //put search result in session storage to be used in the next page
                         sessionStorage.setItem("Search", xhttp.responseText);
                         return true;
                     }
@@ -219,7 +221,11 @@
 
                 //text people
                 function send(){
-
+                    if (document.getElementById("typed").value == null || document.getElementById("typed").value.trim().length == 0
+                    || document.getElementById("recipient").value == null || document.getElementById("recipient").value == 0){
+                        alert("Can't post empty content and/or recipient!");
+                        return false;
+                    }
                     var div1 = document.createElement("div");
                     div1.setAttribute("class", "media p-3");
                     var img = document.createElement("img");
@@ -242,6 +248,16 @@
                     div1.appendChild(div2)
                     document.getElementById("chatting").appendChild(div1);
                     
+                    //http request to api
+                    var xhttp = new XMLHttpRequest();
+                    var token = JSON.parse(sessionStorage.getItem("status")).authenticationToken;
+                    xhttp.open("POST", "localhost:8080/api/message", false);
+                    xhttp.setRequestHeader("Authorization", "Bearer " + token);
+                    xhttp.setRequestHeader("Content-Type", "application/json");
+                    var param = {
+                        "content": document.getElementById("typed").value,
+                        "receiverName": document.getElementById("recipient").value
+                    }
 
                 }
                 

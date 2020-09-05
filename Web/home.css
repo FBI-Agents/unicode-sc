@@ -104,9 +104,21 @@ a, a:link, a:hover{
 }
 #text{
     position:relative;
-    left: 85%;
+    left: 210px;
     top: 40px;
-    width: 80px;
+    width: 200px;
+    height: 60px;
+    z-index: 3;
+}
+#recipient{
+    position: relative;
+    top: 40px;
+    width: 200px;
+    height: 60px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 2px solid lightgray;
+    box-shadow: 3px 3px 2px lightgray;
 }
 #chatting{
     position: relative;
