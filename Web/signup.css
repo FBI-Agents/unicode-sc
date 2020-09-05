@@ -29,21 +29,7 @@ html {
     
     
 }
-.user{
-    position: absolute;
-    right: 0px;
-    padding-right:20px;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    width: 160px;
-    height: 70px;
-    transition: .5s ease;
-    border-style: none;
-    border-radius: 0px;
-    background-color: white;
-    
-}
+
 .home{
     position: absolute;
     transition: .5s ease;
@@ -88,6 +74,9 @@ html {
     box-shadow: 3px 3px 3px gray;  
 }
 
+.labels{
+    padding-left: 5%;
+}
 
 .col-sm-8 select {
     color: #6c757d;
@@ -119,4 +108,29 @@ html {
 
 .hidden{
     display: none;
+}
+
+@media (max-width: 991px) {
+    .home{
+        right: 4%;
+    }
+    .labels {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .home{
+        right: 1%;
+    }
+    .labels {
+        padding-left: 4%;
+    }
+    .signup {
+        height: 930px;
+    }
+    .wrapper {
+        height: 860px;
+        top: 35px;
+    }
 }
