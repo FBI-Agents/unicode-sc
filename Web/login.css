@@ -89,6 +89,10 @@ html {
     font-family: "Noto Sans JP";
 }
 
+.labels {
+    padding-left: 6%;
+}
+
 .col-sm-8 input:focus {
     box-shadow: 0 0 0 3px #ed9aa2;
     border-color: #a61e36;
@@ -114,4 +118,18 @@ html {
 }
 .reminder{
     text-align: center;
+}
+
+@media (max-width: 991px) {
+    .home{
+        right: 4%;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .home{
+        right: 1%;
+    }
 }
