@@ -92,7 +92,7 @@ html {
 }
 
 .user-information {
-    width: 70%;
+    width: 80%;
     margin: auto;
 }
 
@@ -101,15 +101,15 @@ html {
 }
 .col1 {
     font-weight: bold;
-    width: 19%;
+    width: 23%;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: 27%;
+    margin-left: 32%;
     float: left;
 }
 
 .col2 {
-    width: 27%;
+    width: 40%;
     padding-top: 5px;
     padding-bottom: 5px;
     float: left;
@@ -129,3 +129,62 @@ html {
     color: #fec52e;
 }
 
+@media (max-width: 991px) {
+    .home{
+        right: 4%;
+    }
+    .user-information {
+        width: 90%;
+    }
+    .col1 {
+        width: 32%;
+        margin-left: 16%;
+    }
+    .col2 {
+        width: 52%;
+    }
+    #cover {
+        width: 120%;
+        margin-left: -10%;
+    }
+    #cover + img {
+        margin-left: 40%;
+        margin-right: 40%;
+        border-radius: 50%;
+        width: 20%;
+    }
+}
+
+@media (max-width: 767px) {
+    .home{
+        right: 1%;
+    }
+
+    .profile {
+        height: 660px;
+    }
+
+    .wrapper{
+        height: 620px;
+    }
+
+    .col1 {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+    .col2 {
+        width: 100%;
+        text-align: center;
+    }
+    #cover {
+        width: 130%;
+        margin-left: -14%;
+    }
+    #cover + img {
+        border: 3px solid white;
+    }
+    #edit-profile {
+        margin-top: 30px;
+    }
+}
