@@ -47,3 +47,35 @@
 .home:hover{
     background: rgba(211, 211, 211, 0.5);
 }
+
+.signup {
+    background-color:lightgray;
+    font-family: "Noto Sans JP";
+    height: 600px;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    position: relative;
+    top: 80px;
+    width: 70%;
+    height: 450px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px gray;  
+}
+
+
+.col-sm-8 select {
+    color: #6c757d;
+}
+
+#placeholder {
+    display: none;
+}
