@@ -58,16 +58,50 @@
                                 <button class="btn btn-outline-danger form-control" id="submit" type="submit">Sign In</button>
                             </div>
                         </div>
+                        <div class="form-group row justify-content-center">
+                            <label class="col-sm-9 reminder">
+                                New to here? <a href="signup.html">Click here</a> to register.
+                            </label>
+                        </div>
                     </form>
+                </div>
+            </div>
+
+            <button id="hide" type="button" class="btn btn-info btn-lg hidden" data-toggle="modal" data-backdrop="static" data-target="#myModal">Open Modal</button>
+
+                <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="titles">Login Succeed!</h4>
+                        </div>
+                        <div class="modal-body" id="text-body">
+                            <p>You have sucessfully logged in with your Trojan Connect. You will be now directed to homepage.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="results" type="button" class="btn btn-default" data-backdrop="static" data-dismiss="modal" onclick="redirect()">Close</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
 
             <script>
 
+                function redirect(){
+
+                    location.replace("home.html");
+                }
+                function stay(){
+                    return false;
+                }
+
                 function login(){
 
-                    alert("login")
                     var xhttp = new XMLHttpRequest();
                     xhttp.open("POST", "http://localhost:8080/api/auth/login", false);
                     xhttp.setRequestHeader("Content-Type", "application/json");
@@ -77,9 +111,18 @@
                         "password" : document.getElementById("Password").value
                         }
                     xhttp.send(JSON.stringify(param));
-
-                    var response = xhttp.responseText;
-                    alert(response);
+                    
+                    if (xhttp.status == 200 || xhttp.status == 201){
+                        
+                    }
+                    else{
+                        document.getElementById("titles").innerHTML = "Login Failed";
+                        document.getElementById("text-body").innerHTML = "Please check your username and/or password again.";
+                        document.getElementById("results").setAttribute("onclick", "return stay()");
+                    }
+                    
+                    document.getElementById("hide").click();
+                    return false;
                     
 
                 }

@@ -35,8 +35,14 @@
 
             <div class="signup">
                 <div class="align-middle wrapper">
-                    <img class="login-pic" src="images/trojan.png" width="60" height="60" alt="Trojan">
-                    <form action="" method="POST" class="form">
+                    <img class="login-pic" src="images/trojan.png" width="60" height="60">
+                    <form method="POST" class="form needs-validation " id="register" onsubmit="return signup()">
+                        <div class="form-group row justify-content-center">
+                            <label class="col-sm-2 col-form-label" >Username:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                            </div>
+                        </div>
                         <div class="form-group row justify-content-center">
                             <label class="col-sm-2 col-form-label" >First Name:</label>
                             <div class="col-sm-8">
@@ -58,44 +64,40 @@
                         <div class="form-group row justify-content-center">
                             <label class="col-sm-2 col-form-label" >Class Standing:</label>
                             <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option value="" class="placeholder">Choose Here</option>
-                                    <optgroup label="Undergraduate">
-                                        <option value="1">Undergraduate - Freshman</option>
-                                        <option value="2">Undergraduate - Sophomore</option>
-                                        <option value="3">Undergraduate - Junior</option>
-                                        <option value="4">Undergraduate - Senior</option>
-                                    </optgroup>
-                                    <option value="5">Graduate</option>
-                                    <option value="6">PhD</option>
-                                    <option value="7">Alumni</option>
-                                    <option value="8">Faculty</option>
+                                <select id="standings" class="form-control" aria-placeholder="Choose Here" required>
+                                    <option value="Freshman">Undergraduate - Freshman</option>
+                                    <option value="Sophomore">Undergraduate - Sophomore</option>
+                                    <option value="Junior">Undergraduate - Junior</option>
+                                    <option value="Senior">Undergraduate - Senior</option>
+                                    <option value="Graduate">Graduate</option>
+                                    <option value="PhD">PhD</option>
+                                    <option value="Alumni">Alumni</option>
+                                    <option value="Faculty">Faculty</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row justify-content-center">
                             <label class="col-sm-2 col-form-label" >School:</label>
                             <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option value="" class="placeholder">Choose Here</option>
-                                    <option value="1">Dornsife College of Letters, Arts and Sciences</option>
-                                    <option value="2">USC School of Architecture</option>
-                                    <option value="3">Roski School of Art and Design</option>
-                                    <option value="4">Iovine and Young Academy for Arts, Technology and the Business of Innovation</option>
-                                    <option value="5">Marshall School of Business</option>
-                                    <option value="6">USC School of Cinematic Arts</option>
-                                    <option value="7">Annenberg School for Communication and Journalism</option>
-                                    <option value="8">Kaufman School of Dance</option>
-                                    <option value="9">Ostrow School of Dentistry</option>
-                                    <option value="10">USC School of Dramatic Arts</option>
-                                    <option value="11">Viterbi School of Engineering</option>
-                                    <option value="12">Davis School of Gerontology</option>
-                                    <option value="13">Keck School of Medicine</option>
-                                    <option value="14">Thornton School of Music</option>
-                                    <option value="15">Chan Division of Occupational Science and Occupational Therapy</option>
-                                    <option value="16">USC School of Pharmacy</option>
-                                    <option value="17">Price School of Public Policy</option>
-                                    <option value="18">Pre-professional Emphases</option>
+                                <select class="form-control" id="school">
+                                    <option value="Dornsife College of Letters, Arts and Sciences">Dornsife College of Letters, Arts and Sciences</option>
+                                    <option value="USC School of Architecture">USC School of Architecture</option>
+                                    <option value="Roski School of Art and Design">Roski School of Art and Design</option>
+                                    <option value="Iovine and Young Academy for Arts, Technology and the Business of Innovation">Iovine and Young Academy for Arts, Technology and the Business of Innovation</option>
+                                    <option value="Marshall School of Business">Marshall School of Business</option>
+                                    <option value="USC School of Cinematic Arts">USC School of Cinematic Arts</option>
+                                    <option value="Annenberg School for Communication and Journalism">Annenberg School for Communication and Journalism</option>
+                                    <option value="Kaufman School of Dance">Kaufman School of Dance</option>
+                                    <option value="Ostrow School of Dentistry">Ostrow School of Dentistry</option>
+                                    <option value="USC School of Dramatic Arts">USC School of Dramatic Arts</option>
+                                    <option value="Viterbi School of Engineering">Viterbi School of Engineering</option>
+                                    <option value="Davis School of Gerontology">Davis School of Gerontology</option>
+                                    <option value="Keck School of Medicine">Keck School of Medicine</option>
+                                    <option value="Thornton School of Music">Thornton School of Music</option>
+                                    <option value="Chan Division of Occupational Science and Occupational Therapy">Chan Division of Occupational Science and Occupational Therapy</option>
+                                    <option value="USC School of Pharmacy">USC School of Pharmacy</option>
+                                    <option value="Price School of Public Policy">Price School of Public Policy</option>
+                                    <option value="Pre-professional Emphases">Pre-professional Emphases</option>
                                 </select>
                             </div>
                         </div>
@@ -111,12 +113,81 @@
                                 <button class="btn btn-outline-danger form-control" id="submit" type="submit">Sign Up</button>
                             </div>
                         </div>
+                        <div class="form-group row justify-content-center">
+                            <label class="col-sm-9 reminder">
+                                Already had account? <a href="login.html">Click here</a> to login.
+                            </label>
+                        </div>
                     </form>
                 </div>
             </div>
+            <button type="button" id="results" class="btn btn-info btn-lg hidden" data-toggle="modal" data-target="#myModal">Open Modal</button>
+            <div id="myModal" class="modal fade hidden" role="dialog">
+                <div class="modal-dialog">
+              
+                  <!-- Modal content-->
+                <div class="modal-content" style="position: relative; margin-left: auto; margin-right: auto;">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="titles" style="text-align: center; position: relative; left: 0px;">Registration Succeed!</h4>
+                    </div>
+                    <div class="modal-body" id="text-body">
+                      <p>Now you can login with your newly created account. You will be redirected to
+                          login page.
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-backdrop="static" data-dismiss="modal" onclick="redirect()">Close</button>
+                    </div>
+                  </div>
+              
+                </div>
+            </div>
 
+            <script>
 
+                function stay(){
 
+                    return false;
+                }
+
+                function signup(){
+                    
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.open("POST", "http://localhost:8080/api/auth/signup", false);
+                    xhttp.setRequestHeader("Content-Type", "application/json");
+                    var e = document.getElementById("standings");
+                    var f = document.getElementById("school");
+                    var param = {
+                        "first_name": document.getElementById("First-name").value,
+                        "last_name" : document.getElementById("Last-name").value,
+                        "email"     : document.getElementById("Email").value,
+                        "password"  : document.getElementById("Password").value,
+                        "username"  : document.getElementById("username").value,
+                        "standings" : e.options[e.selectedIndex].value,
+                        "school"    : f.options[f.selectedIndex].value
+                        }
+                        
+                    xhttp.send(JSON.stringify(param));
+                    
+                    if (xhttp.status == 200 || xhttp.status == 201){
+    
+                    }
+                    else{
+                        document.getElementById("titles").innerHTML = "Registration Failed";
+                        document.getElementById("text-body").innerHTML = "This username has been taken please try again."
+                        document.getElementById("results").setAttribute("onclick", "return stay()");
+                    }
+                    document.getElementById("results").click();
+                    return false;
+                    
+                }
+
+                function redirect(){
+                    location.replace("login.html")
+                }
+
+                
+            </script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
