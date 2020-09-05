@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+}
+
+html {
+    background-color:lightgray;
+}
+
+.main{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.form-inline .search-bar{
+    width: 250px;
+    margin-right: 10px;
+    background-color: rgb(236, 234, 234);
+}
+
+.search-button{
+    border-radius: 20px;
+}
+
+.shadow{
+    box-shadow: 3px 3px 2px lightgray;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.home{
+    position: absolute;
+    transition: .5s ease;
+    right: 8%;
+}
+.home:focus{
+    box-shadow: none;
+}
+.home:hover{
+    background: rgba(211, 211, 211, 0.5);
+}
+
+.profile {
+    background-color:lightgray;
+    font-family: "Noto Sans JP";
+    height: 650px;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    position: relative;
+    top: 20px;
+    width: 70%;
+    height: 600px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px gray;  
+}
+
+#cover {
+	width: 100%;
+}
