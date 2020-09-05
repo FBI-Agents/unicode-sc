@@ -1,0 +1,136 @@
+*{
+    margin: 0px;
+}
+html {
+    background-color:lightgray;
+}
+.main{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.form-inline .search-bar{
+    width: 250px;
+    margin-right: 10px;
+    background-color: rgb(236, 234, 234);
+}
+.form-inline .search-bar:focus {
+    box-shadow: 0 0 0 3px #ed9aa2;
+    border-color: #a61e36;
+}
+.search-button{
+    border-radius: 20px;
+}
+
+.shadow{
+    box-shadow: 3px 3px 2px lightgray;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    
+    
+}
+
+.home{
+    position: absolute;
+    transition: .5s ease;
+    right: 8%;
+}
+.home:focus{
+    box-shadow: none;
+}
+.home:hover{
+    background: rgba(237, 154, 162, 0.5);
+}
+
+.signup {
+    background-color:lightgray;
+    font-family: "Noto Sans JP";
+    height: 650px;
+    box-sizing: border-box;
+}
+
+#register{
+    height: 500px;
+    position: relative;
+    top: 20px;
+}
+.reminder{
+    text-align: center;
+}
+
+.wrapper{
+    position: relative;
+    top: 30px;
+    width: 70%;
+    height: 600px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px gray;  
+}
+
+.labels{
+    padding-left: 5%;
+}
+
+.col-sm-8 select {
+    color: #6c757d;
+}
+
+.col-sm-8 input:focus, .col-sm-8 select:focus {
+    box-shadow: 0 0 0 3px #ed9aa2;
+    border-color: #a61e36;
+}
+
+.placeholder {
+    display: none;
+}
+
+#submit {
+    border-color: #a61e36;
+    color: #a61e36;
+}
+#submit:hover {
+    background-color: #a61e36;
+    border-color: #a61e36;
+    color: #fec52e;
+}
+
+#submit:focus{
+    background-color: #a61e36;
+    color: #fec52e;
+}
+
+.hidden{
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .home{
+        right: 4%;
+    }
+    .labels {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .home{
+        right: 1%;
+    }
+    .labels {
+        padding-left: 4%;
+    }
+    .signup {
+        height: 930px;
+    }
+    .wrapper {
+        height: 860px;
+        top: 35px;
+    }
+}

@@ -118,6 +118,9 @@ html {
     clear: both;
 }
 
+a:hover {
+    text-decoration: none;
+}
 #edit-profile {
     display: block;
     margin-left: auto;
@@ -185,6 +188,6 @@ html {
         border: 3px solid white;
     }
     #edit-profile {
-        margin-top: 30px;
+        margin-top: 25px;
     }
 }
