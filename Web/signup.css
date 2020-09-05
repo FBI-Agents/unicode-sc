@@ -1,6 +1,9 @@
 *{
     margin: 0px;
 }
+html {
+    background-color:lightgray;
+}
 .main{
     padding-left: 0px;
     padding-right: 0px;
@@ -59,7 +62,7 @@
     position: relative;
     top: 80px;
     width: 70%;
-    height: 450px;
+    height: 500px;
     padding-left: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -76,7 +79,12 @@
     color: #6c757d;
 }
 
-#placeholder {
+.col-sm-8 input:focus, .col-sm-8 select:focus {
+    box-shadow: 0 0 0 3px #ed9aa2;
+    border-color: #a61e36;
+}
+
+.placeholder {
     display: none;
 }
 

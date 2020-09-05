@@ -1,6 +1,9 @@
 *{
     margin: 0px;
 }
+html {
+    background-color:lightgray;
+}
 .main{
     padding-left: 0px;
     padding-right: 0px;
@@ -82,6 +85,11 @@
 .invalid-feedback{
     font-size: 16px;
     font-family: "Noto Sans JP";
+}
+
+.col-sm-8 input:focus {
+    box-shadow: 0 0 0 3px #ed9aa2;
+    border-color: #a61e36;
 }
 
 #submit {
