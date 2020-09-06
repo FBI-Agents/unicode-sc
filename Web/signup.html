@@ -172,7 +172,6 @@
                         }
                         
                     xhttp.send(JSON.stringify(param));
-                    alert(xhttp.response)
                     sessionStorage.setItem("status", xhttp.response);
                     if (xhttp.status == 200 || xhttp.status == 201){
                         

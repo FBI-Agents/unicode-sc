@@ -61,7 +61,7 @@
                 <div class="row main-menu">
                     <div class="col-3 left1" id="left1">
                         <!--This only display after logged in-->
-                        <div class="form-group flex-column justtify-content-center">
+                        <div class="form-group flex-column justify-content-center">
                             <label class="form-control welcome">
                                 Welcome Back!
                             </label>
@@ -71,6 +71,9 @@
                                     <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                                 </svg>    
                             </button>
+                        </div>
+                        <div id="list" class="form-group flex-column justify-content-center nearby-user">
+
                         </div>
                     </div>
                     <div class="col-3 left2" id="left2"> 
@@ -262,6 +265,81 @@
 
                 }
                 
+            </script>
+            <script>
+                /*function loadMessage(){
+                    var token = JSON.parse(sessionStorage.getItem("status")).authenticationToken;
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.open("GET", "localhost:8080/api/message", false);
+                    xhttp.setRequestHeader("Authorization", "Bearer " + token);
+                    xhttp.setRequestHeader("Content-Type", "application/json");
+                    xhttp.send();
+
+                    var newText = JSON.parse(xhttp.responseText).content;
+
+                    var timestamp = newText.content.created;
+                    if (document.getElementById(timestamp) == null){ //new message need to append
+                        
+                    var div1 = document.createElement("div");
+                    div1.setAttribute("class", "media p-3");
+                    div1.setAttribute("id", timestamp);
+                    var img = document.createElement("img");
+                    img.setAttribute("class", "mr-3 mt-3 rounded-circle")
+                    img.setAttribute("style", "height: 60px; width: 60px;")
+                    img.setAttribute("src", "images/user.jpg")
+                    var div2 = document.createElement("div")
+                    div2.setAttribute("class", "media-body")
+                    var h4 = document.createElement("h6");
+                    var d = new Date();
+                    h4.innerHTML= newText.content.senderName + '<small><i> <br> Posted on ' + d +'</i></small>'
+                    var p = document.createElement("p");
+                    p.innerHTML = newText.content.content;
+                    p.setAttribute("style", "font-family= 'Noto Sans JP'; font-size: 20px;")
+
+                    div2.appendChild(h4)
+                    div2.appendChild(p);
+
+                    
+                    div1.appendChild(div2)
+                    div1.appendChild(img);
+                    document.getElementById("chatting").appendChild(div1);
+                    }
+                } */
+                //call loadMessage every 2 secs
+                //setInterval(loadMessage, 2000);
+                let longtitude = 0;
+                let latitude = 0;
+                navigator.geolocation.getCurrentPosition(showPosition);
+                function userNeareby(){
+                    var xhttp = new XMLHttpRequest();
+                    var token = JSON.parse(sessionStorage.getItem("status")).authenticationToken;
+                    xhttp.open("POST", "localhost:8080/api/location", false);
+                    xhttp.setRequestHeader("Content-Type", "application/json")
+                    xhttp.setRequestHeader("Authorization", "Bearer " + token)
+                    var param = {
+                        "latitude":latitude,
+                        "longtitude":longtitude
+                    }
+                    xhttp.send(JSON.stringify(param));
+                    
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("GET", "localhost:8080/api/location/near", false);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    xhr.setRequestHeader("Authorization", "Bearer " + token);
+                    xhr.sned();
+
+                    if (xhr.status == 200){
+                        var json = JSON.parse(xhr.responseText);
+                        for (var i = 0; i < json.length; i++){
+                            alert(json[i]);
+                        }
+                    }
+                }
+
+                function showPosition(position){
+                    longtitude= position.coords.latitude;
+                    latitude=position.coords.latitude;
+                }
             </script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
